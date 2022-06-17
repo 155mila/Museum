@@ -1,6 +1,8 @@
 import welcomeSlider from './modules/slider';
+import videoSlider from './modules/video-slider';
 
 welcomeSlider();
+videoSlider();
 
 /*import image from './images/lazy.png';
 

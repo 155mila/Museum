@@ -307,6 +307,18 @@ h2.section-title {
       line-height: 38px;
     }
   }
+  .video-player {
+    .video-item {
+      width: 100%;
+      height: 650px;
+    }
+    .video-slide {
+      display: none;
+    }
+    .video-slide.active {
+      display: block;
+    }
+  }
   .control-panel {
     display: flex;
     justify-content: space-between;
@@ -373,12 +385,13 @@ h2.section-title {
     display: flex;
     justify-content: center;
     list-style: none;
-    .dots-item {
+    .dot {
       width: 12px;
       height: 12px;
       background: #999999;
       border-radius: 50%;
       margin-right: 20px;
+      cursor: pointer;
       &.active {
         background: #333333;
       }
@@ -390,6 +403,7 @@ h2.section-title {
       width: 12px;
       height: 12px;
       margin-right: 20px;
+      cursor: pointer;
     }
     .arrow-next {
       transform: rotate(-180deg);
