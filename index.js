@@ -1,4 +1,6 @@
-/**import style from './scss/style.scss'*/
+import welcomeSlider from './modules/slider';
+
+welcomeSlider();
 
 /*import image from './images/lazy.png';
 

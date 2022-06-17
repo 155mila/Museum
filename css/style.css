@@ -125,12 +125,35 @@ body {
 
 .section.welcom-section .section-title {
   padding-top: 150px;
+  position: relative;
+  z-index: 1;
 }
 
 .flex-wrapper {
   position: absolute;
   right: 231px;
   bottom: 0;
+}
+
+.flex-wrapper .slide {
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.flex-wrapper .slide::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: -webkit-gradient(linear, left top, right top, from(#000000), color-stop(16.19%, rgba(0, 0, 0, 0.5)), color-stop(30.73%, rgba(0, 0, 0, 0)));
+  background: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0.5) 16.19%, rgba(0, 0, 0, 0) 30.73%);
+}
+
+.flex-wrapper .slide.active {
+  display: block;
 }
 
 .slider-pagination {
@@ -157,9 +180,12 @@ body {
 }
 
 .slider-pagination span {
-  padding-left: 74px;
   font-size: 22px;
   line-height: 40px;
+}
+
+.slider-pagination #current {
+  padding-left: 74px;
 }
 
 .slider-pagination .dots-pagination {
@@ -175,13 +201,39 @@ body {
   width: 16px;
   height: 16px;
   background: #fff;
+  cursor: pointer;
 }
 
 .slider-pagination .dots-pagination .dots-item.active {
   background-color: #d2b183;
 }
 
-.slider-pagination .arrows {
+.fade {
+  -webkit-animation-name: fade;
+          animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.arrows {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -189,19 +241,20 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin-right: 60px;
+  cursor: pointer;
 }
 
-.slider-pagination .arrows .arrow {
+.arrows .arrow {
   width: 30px;
   height: 8px;
   background-image: url(../assets/svg/arrow.svg);
 }
 
-.slider-pagination .arrows .arrow.prew {
+.arrows .arrow.prev {
   margin-right: 24px;
 }
 
-.slider-pagination .arrows .arrow.next {
+.arrows .arrow.next {
   -webkit-transform: rotate(-180deg);
           transform: rotate(-180deg);
 }
@@ -789,5 +842,10 @@ h2.section-title.section-dark {
 
 .footer .social-link .link-item.pinterest {
   background-image: url(../assets/svg/pinterest-icon.svg);
+}
+
+.google-street-view {
+  width: calc(100vw - 20px);
+  height: calc(100vh - 20px);
 }
 /*# sourceMappingURL=style.css.map */

@@ -12,9 +12,12 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Forum&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,300;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Forum&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,300;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="icon" href="assets/favicon.ico" />
     <script src="./dist/bundle.js" type="module"></script>
     <title>Museum</title>
@@ -49,7 +52,7 @@
           </h1>
           <p>From the castle to the museum</p>
           <a
-            href="http://"
+            href="tours/tour1.html"
             target="_blank"
             rel="noopener noreferrer"
             class="btn-welcom"
@@ -57,12 +60,24 @@
           >
           <div class="flex-wrapper">
             <div class="slider-wrapper">
+              <div class="slide active">
+                <img src="assets/img/welcome-slider/1.jpg" alt="" />
+              </div>
               <div class="slide">
-                <img src="assets/img/1.jpg" alt="">
+                <img src="assets/img/welcome-slider/2.jpg" alt="" />
+              </div>
+              <div class="slide">
+                <img src="assets/img/welcome-slider/3.jpg" alt="" />
+              </div>
+              <div class="slide">
+                <img src="assets/img/welcome-slider/4.jpg" alt="" />
+              </div>
+              <div class="slide">
+                <img src="assets/img/welcome-slider/5.jpg" alt="" />
               </div>
             </div>
             <div class="slider-pagination">
-              <span>01 | 05</span>
+              <span id="current">03</span>|<span id="total">04</span>
               <ul class="dots-pagination">
                 <li class="dots-item active"></li>
                 <li class="dots-item"></li>
@@ -71,7 +86,7 @@
                 <li class="dots-item"></li>
               </ul>
               <div class="arrows">
-                <div class="arrow prew"></div>
+                <div class="arrow prev"></div>
                 <div class="arrow next"></div>
               </div>
             </div>
@@ -82,7 +97,7 @@
         <div class="container">
           <h2 class="section-title underline-title">Virtual tour</h2>
           <div class="cards-container">
-            <a href="#" class="card">
+            <a href="tours/tour2.html" class="card" target="_blank">
               <img src="assets/img/2.jpg" alt="card-foto" />
               <div class="card-title">Royal Palace</div>
               <div class="card-text">
@@ -90,7 +105,7 @@
                 <p>Google Street Panorama View</p>
               </div>
             </a>
-            <a href="#" class="card">
+            <a href="tours/tour3.html" class="card" target="_blank">
               <img src="assets/img/3.jpg" alt="card-foto" />
               <div class="card-title">Denon Wing</div>
               <div class="card-text">
@@ -98,7 +113,7 @@
                 <p>Google Street Panorama View</p>
               </div>
             </a>
-            <a href="#" class="card">
+            <a href="tours/tour4.html" class="card" target="_blank">
               <img src="assets/img/4.jpg" alt="card-foto" />
               <div class="card-title">Colonnade Perrault</div>
               <div class="card-text">
@@ -106,7 +121,7 @@
                 <p>Google Street Panorama View</p>
               </div>
             </a>
-            <a href="#" class="card">
+            <a href="tours/tour5.html" class="card" target="_blank">
               <img src="assets/img/5.jpg" alt="card-foto" />
               <div class="card-title">Greek hall</div>
               <div class="card-text">
@@ -114,7 +129,7 @@
                 <p>Google Street Panorama View</p>
               </div>
             </a>
-            <a href="#" class="card">
+            <a href="tours/tour6.html" class="card" target="_blank">
               <img src="assets/img/6.jpg" alt="card-foto" />
               <div class="card-title">Mona Lisa</div>
               <div class="card-text">
@@ -122,7 +137,7 @@
                 <p>Google Street Panorama View</p>
               </div>
             </a>
-            <a href="#" class="card">
+            <a href="tours/tour7.html" class="card" target="_blank">
               <img src="assets/img/7.jpg" alt="card-foto" />
               <div class="card-title">Night Palace</div>
               <div class="card-text">
@@ -210,21 +225,22 @@
           <h2 class="section-title">Art Gallery</h2>
           <div class="picture-container">
             <div class="picture-inner-container">
-            <img src="../assets/img/galery1.jpg" alt="" />
-            <img src="../assets/img/galery2.jpg" alt="" />
-            <img src="../assets/img/galery3.jpg" alt="" />
-            <img src="../assets/img/galery4.jpg" alt="" />
-            <img src="../assets/img/galery5.jpg" alt="" />
-            <img src="../assets/img/galery6.jpg" alt="" />
-            <img src="../assets/img/galery7.jpg" alt="" />
-            <img src="../assets/img/galery8.jpg" alt="" />
-            <img src="../assets/img/galery9.jpg" alt="" />
-            <img src="../assets/img/galery10.jpg" alt="" />
-            <img src="../assets/img/galery11.jpg" alt="" />
-            <img src="../assets/img/galery12.jpg" alt="" />
-            <img src="../assets/img/galery13.jpg" alt="" />
-            <img src="../assets/img/galery14.jpg" alt="" />
-            <img src="../assets/img/galery15.jpg" alt="" />
+              <img src="../assets/img/galery1.jpg" alt="" />
+              <img src="../assets/img/galery2.jpg" alt="" />
+              <img src="../assets/img/galery3.jpg" alt="" />
+              <img src="../assets/img/galery4.jpg" alt="" />
+              <img src="../assets/img/galery5.jpg" alt="" />
+              <img src="../assets/img/galery6.jpg" alt="" />
+              <img src="../assets/img/galery7.jpg" alt="" />
+              <img src="../assets/img/galery8.jpg" alt="" />
+              <img src="../assets/img/galery9.jpg" alt="" />
+              <img src="../assets/img/galery10.jpg" alt="" />
+              <img src="../assets/img/galery11.jpg" alt="" />
+              <img src="../assets/img/galery12.jpg" alt="" />
+              <img src="../assets/img/galery13.jpg" alt="" />
+              <img src="../assets/img/galery14.jpg" alt="" />
+              <img src="../assets/img/galery15.jpg" alt="" />
+            </div>
           </div>
         </div>
       </section>
@@ -232,19 +248,22 @@
         <div class="container">
           <h2 class="section-title underline-title">Buy tikets</h2>
           <div class="form-order">
-            <img src="assets/img/img-tickets.jpg" alt="">
+            <img src="assets/img/img-tickets.jpg" alt="" />
             <div class="tikets-type">
               <h3>Tickets type</h3>
-              <label class="wrapper">Permanent exhibition
-                <input type="radio" checked="checked" name="radio">
+              <label class="wrapper"
+                >Permanent exhibition
+                <input type="radio" checked="checked" name="radio" />
                 <span class="checkmark"></span>
               </label>
-              <label class="wrapper">Temporary exhibition
-                <input type="radio" name="radio">
+              <label class="wrapper"
+                >Temporary exhibition
+                <input type="radio" name="radio" />
                 <span class="checkmark"></span>
               </label>
-              <label class="wrapper">Combined Admission
-                <input type="radio" name="radio">
+              <label class="wrapper"
+                >Combined Admission
+                <input type="radio" name="radio" />
                 <span class="checkmark"></span>
               </label>
             </div>
@@ -252,70 +271,106 @@
               <h3>Amount</h3>
               <p>Basic 18+</p>
               <div class="ticket-amount">
-                <button type="button" onclick="this.nextElementSibling.stepDown()">–</button>
-                <input type="number" min="0" max="20" value="1" readonly class="number">
-                <button type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+                <button
+                  type="button"
+                  onclick="this.nextElementSibling.stepDown()"
+                >
+                  –
+                </button>
+                <input
+                  type="number"
+                  min="0"
+                  max="20"
+                  value="1"
+                  readonly
+                  class="number"
+                />
+                <button
+                  type="button"
+                  onclick="this.previousElementSibling.stepUp()"
+                >
+                  +
+                </button>
               </div>
               <p>Senior 65+</p>
               <div class="ticket-amount">
-              <button type="button" onclick="this.nextElementSibling.stepDown()">–</button>
-              <input type="number" min="0" max="20" value="1" readonly class="number">
-              <button type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+                <button
+                  type="button"
+                  onclick="this.nextElementSibling.stepDown()"
+                >
+                  –
+                </button>
+                <input
+                  type="number"
+                  min="0"
+                  max="20"
+                  value="1"
+                  readonly
+                  class="number"
+                />
+                <button
+                  type="button"
+                  onclick="this.previousElementSibling.stepUp()"
+                >
+                  +
+                </button>
               </div>
               <div class="total">Total €220</div>
               <button type="button" class="btn-tickets">Buy Now</button>
             </div>
           </div>
         </div>
-        
       </section>
       <div class="parallax"></div>
-     
+
       <section class="section contacts-section" id="contacts">
         <div class="container">
           <h2 class="section-title underline-title">Contacts</h2>
           <div class="contact-content">
             <div class="contact-info">
-              <p class="contact-name">Palais Royal<br> Musee du Louvre</p>
+              <p class="contact-name">
+                Palais Royal<br />
+                Musee du Louvre
+              </p>
               <p class="contact address">address: 75001 Paris, France</p>
               <p class="contact phone">phone: +33(0) 1 40 20 50 50</p>
               <p class="contact mail">mail: info@louvre.fr</p>
             </div>
-            <img src="assets/img/map.png" alt="map">
+            <img src="assets/img/map.png" alt="map" />
           </div>
         </div>
       </section>
     </main>
     <footer class="footer">
       <div class="container">
-      <div class="logo">
-        <div class="logo-img"></div>
-        <span>Louvre</span>
-      </div>
-      <div class="menu-footer">
-        <nav>
-          <ul class="nav-footer">
-            <li><a href="#visiting">Visiting</a></li>
-            <li><a href="#explore">Explore</a></li>
-            <li><a href="#video">Video</a></li>
-          </ul>
+        <div class="logo">
+          <div class="logo-img"></div>
+          <span>Louvre</span>
+        </div>
+        <div class="menu-footer">
+          <nav>
+            <ul class="nav-footer">
+              <li><a href="#visiting">Visiting</a></li>
+              <li><a href="#explore">Explore</a></li>
+              <li><a href="#video">Video</a></li>
+            </ul>
           </nav>
           <nav>
-          <ul class="nav-footer"> 
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#tickets">Tickets</a></li>
-            <li><a href="#contacts">Contacts</a></li>
-          </ul>
-        </nav>
+            <ul class="nav-footer">
+              <li><a href="#gallery">Gallery</a></li>
+              <li><a href="#tickets">Tickets</a></li>
+              <li><a href="#contacts">Contacts</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="social-link">
+          <a href="#" class="link-item youtube"></a>
+          <a href="#" class="link-item instagram"></a>
+          <a href="#" class="link-item facebook"></a>
+          <a href="#" class="link-item twitter"></a>
+          <a href="#" class="link-item pinterest"></a>
+        </div>
       </div>
-      <div class="social-link">
-        <a href="#" class="link-item youtube"></a>
-        <a href="#" class="link-item instagram"></a>
-        <a href="#" class="link-item facebook"></a>
-        <a href="#" class="link-item twitter"></a>
-        <a href="#" class="link-item pinterest"></a>
-      </div>
-    </div>
-  </footer>
+    </footer>
   </body>
 </html>
