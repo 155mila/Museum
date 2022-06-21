@@ -1,8 +1,10 @@
 import welcomeSlider from './modules/slider';
 import videoSlider from './modules/video-slider';
+import gallery from './modules/gallery';
 
 welcomeSlider();
 videoSlider();
+gallery();
 
 /*import image from './images/lazy.png';
 
