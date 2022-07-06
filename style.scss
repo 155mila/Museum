@@ -423,6 +423,7 @@ h2.section-title {
       gap: 36px 24px;*/
       padding: 1em;
       column-count: 3;
+      overflow: hidden;
       img:first-child,
       img:nth-child(11) {
         margin-top: 55px;
@@ -442,6 +443,16 @@ h2.section-title {
       background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
     }
   }
+}
+.anim-show {
+  transform: translate(0px, 40%);
+  opacity: 0;
+  transition: all 0.8s ease-in-out 0s;
+}
+.anim-show._active,
+._active .anim-show {
+  transform: translate(0px, 0px);
+  opacity: 1;
 }
 
 .tickets-section {

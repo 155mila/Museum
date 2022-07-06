@@ -541,6 +541,7 @@ h2.section-title.section-dark {
   padding: 1em;
   -webkit-column-count: 3;
           column-count: 3;
+  overflow: hidden;
 }
 
 .gallery-section .picture-container .picture-inner-container img:first-child,
@@ -562,6 +563,21 @@ h2.section-title.section-dark {
   bottom: 0;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(#000000));
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+}
+
+.anim-show {
+  -webkit-transform: translate(0px, 40%);
+          transform: translate(0px, 40%);
+  opacity: 0;
+  -webkit-transition: all 0.8s ease-in-out 0s;
+  transition: all 0.8s ease-in-out 0s;
+}
+
+.anim-show._active,
+._active .anim-show {
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+  opacity: 1;
 }
 
 .tickets-section {
