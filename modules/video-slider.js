@@ -7,51 +7,54 @@ function videoSlider() {
   let index = 0;
 
   const activeVideo = (n) => {
+    console.log(n);
     for (let slide of videoSlides) {
       slide.classList.remove('active');
     }
     videoSlides[n].classList.add('active');
   };
 
-  const activeDot = (n) => {
+  const activeVideoDot = (n) => {
+    console.log(n);
     for (let dot of videoDots) {
       dot.classList.remove('active');
     }
     videoDots[n].classList.add('active');
   };
 
-  const prepareCurrentSlide = (item) => {
+  const prepareVideoCurrentSlide = (item) => {
     activeVideo(item);
-    activeDot(item);
+    activeVideoDot(item);
   };
 
-  const nextSlide = () => {
+  const nextVideoSlide = () => {
+    console.log(videoSlides.length);
     if (index == videoSlides.length - 1) {
       index = 0;
-      prepareCurrentSlide(index);
+      prepareVideoCurrentSlide(index);
     } else {
       index++;
-      prepareCurrentSlide(index);
+      prepareVideoCurrentSlide(index);
     }
   };
-  const prevSlide = () => {
+  const prevVideoSlide = () => {
     if (index == 0) {
       index = videoSlides.length - 1;
-      prepareCurrentSlide(index);
+      prepareVideoCurrentSlide(index);
     } else {
       index--;
-      prepareCurrentSlide(index);
+      prepareVideoCurrentSlide(index);
     }
   };
 
   videoDots.forEach((item, indexDot) => {
     item.addEventListener('click', () => {
       index = indexDot;
-      prepareCurrentSlide(index);
+      prepareVideoCurrentSlide(index);
     });
   });
 
-  next.addEventListener('click', nextSlide);
-  prev.addEventListener('click', prevSlide);
+  next.addEventListener('click', nextVideoSlide);
+  prev.addEventListener('click', prevVideoSlide);
 }
 export default videoSlider;

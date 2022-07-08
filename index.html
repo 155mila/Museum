@@ -246,34 +246,6 @@
                 class="video-item"
               ></iframe>
             </div>
-            <!--<img src="assets/img/Group 84.jpg" alt="img-player" />-->
-            <!--<div class="control-panel">
-              <div class="btn-switch"></div>
-              <input
-                type="range"
-                value="40"
-                min="0"
-                max="100"
-                step="1"
-                class="progress"
-              />
-              <div class="volume"></div>
-              <input
-                type="range"
-                value="40"
-                min="0"
-                max="100"
-                step="1"
-                class="volume-progress"
-              />
-              <div class="fullscreen"></div>
-            </div>-->
-          </div>
-          <div class="preview">
-            <a href="#"><img src="../assets/img/video-slide1.jpg" alt="" /></a
-            ><a href="#"><img src="../assets/img/video-slide2.jpg" alt="" /></a
-            ><a href="#"><img src="../assets/img/video-slide3.jpg" alt="" /></a>
-          </div>
           <ul class="video-pagination">
             <li class="arrow-prev"></li>
             <li class="dot active"></li>
@@ -302,17 +274,17 @@
               <h3>Tickets type</h3>
               <label class="wrapper"
                 >Permanent exhibition
-                <input type="radio" checked="checked" name="radio" />
+                <input type="radio" checked="checked" name="radio" value="permanent" class="input-ticket" />
                 <span class="checkmark"></span>
               </label>
               <label class="wrapper"
                 >Temporary exhibition
-                <input type="radio" name="radio" />
+                <input type="radio" name="radio" value="temporary" class="input-ticket" />
                 <span class="checkmark"></span>
               </label>
               <label class="wrapper"
                 >Combined Admission
-                <input type="radio" name="radio" />
+                <input type="radio" name="radio" value="combined" class="input-ticket" />
                 <span class="checkmark"></span>
               </label>
             </div>
@@ -322,7 +294,7 @@
               <div class="ticket-amount">
                 <button
                   type="button"
-                  onclick="this.nextElementSibling.stepDown()"
+                  onclick="this.nextElementSibling.stepDown()" class="btn-calc"
                 >
                   –
                 </button>
@@ -332,11 +304,12 @@
                   max="20"
                   value="1"
                   readonly
-                  class="number"
+                  class="number-basic"
                 />
                 <button
                   type="button"
                   onclick="this.previousElementSibling.stepUp()"
+                   class="btn-calc"
                 >
                   +
                 </button>
@@ -345,7 +318,7 @@
               <div class="ticket-amount">
                 <button
                   type="button"
-                  onclick="this.nextElementSibling.stepDown()"
+                  onclick="this.nextElementSibling.stepDown()" class="btn-calc"
                 >
                   –
                 </button>
@@ -355,16 +328,16 @@
                   max="20"
                   value="1"
                   readonly
-                  class="number"
+                  class="number-senior"
                 />
                 <button
                   type="button"
-                  onclick="this.previousElementSibling.stepUp()"
+                  onclick="this.previousElementSibling.stepUp()" class="btn-calc"
                 >
                   +
                 </button>
               </div>
-              <div class="total">Total €220</div>
+              <div class="total">Total €<span></span></div>
               <button type="button" class="btn-tickets">Buy Now</button>
             </div>
           </div>

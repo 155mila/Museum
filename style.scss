@@ -380,11 +380,13 @@ h2.section-title {
     display: flex;
     gap: 0 42px;
     margin: 40px 0;
+    overflow: hidden;
   }
   .video-pagination {
     display: flex;
     justify-content: center;
     list-style: none;
+    margin-top: 40px;
     .dot {
       width: 12px;
       height: 12px;
@@ -418,9 +420,6 @@ h2.section-title {
     height: 2000px;
     overflow-y: hidden;
     .picture-inner-container {
-      /*display: flex;
-      flex-wrap: wrap;
-      gap: 36px 24px;*/
       padding: 1em;
       column-count: 3;
       overflow: hidden;
@@ -499,11 +498,6 @@ h2.section-title {
       background-color: #ccc;
     }
 
-    /* When the radio button is checked, add a blue background */
-    .wrapper input:checked ~ .checkmark {
-      /*background-color: #2196f3;*/
-    }
-
     /* Create the indicator (the dot/circle - hidden when not checked) */
     .checkmark:after {
       content: '';
@@ -571,6 +565,9 @@ h2.section-title {
       color: $white;
       border: none;
       cursor: pointer;
+      &:hover {
+        background-color: $dark-red;
+      }
     }
   }
 }

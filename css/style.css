@@ -483,6 +483,7 @@ h2.section-title.section-dark {
   display: flex;
   gap: 0 42px;
   margin: 40px 0;
+  overflow: hidden;
 }
 
 .video-section .video-pagination {
@@ -493,6 +494,7 @@ h2.section-title.section-dark {
       -ms-flex-pack: center;
           justify-content: center;
   list-style: none;
+  margin-top: 40px;
 }
 
 .video-section .video-pagination .dot {
@@ -535,9 +537,6 @@ h2.section-title.section-dark {
 }
 
 .gallery-section .picture-container .picture-inner-container {
-  /*display: flex;
-      flex-wrap: wrap;
-      gap: 36px 24px;*/
   padding: 1em;
   -webkit-column-count: 3;
           column-count: 3;
@@ -595,7 +594,6 @@ h2.section-title.section-dark {
   /* Hide the browser's default radio button */
   /* Create a custom radio button */
   /* On mouse-over, add a grey background color */
-  /* When the radio button is checked, add a blue background */
   /* Create the indicator (the dot/circle - hidden when not checked) */
   /* Show the indicator (dot/circle) when checked */
   /* Style the indicator (dot/circle) */
@@ -633,10 +631,6 @@ h2.section-title.section-dark {
 
 .tickets-section .form-order .wrapper:hover input ~ .checkmark {
   background-color: #ccc;
-}
-
-.tickets-section .form-order .wrapper input:checked ~ .checkmark {
-  /*background-color: #2196f3;*/
 }
 
 .tickets-section .form-order .checkmark:after {
@@ -710,6 +704,10 @@ h2.section-title.section-dark {
   color: #fff;
   border: none;
   cursor: pointer;
+}
+
+.tickets-section .form-order .btn-tickets:hover {
+  background-color: #710707;
 }
 
 .parallax {
