@@ -33,15 +33,12 @@ function gallery() {
   arrUrl = shuffle(arrUrl);
 
   function createImg(arr) {
-    console.log(arr);
     arr.map((item) => {
-      //console.log(item);
       const img = document.createElement('img');
       img.classList.add('gallery-img', 'anim-show');
       img.src = `assets/img/gallery/${item}.jpg`;
       img.alt = `foto picture`;
       pictureInnerContainer.append(img);
-      //console.log(img);
     });
   }
   createImg(arrUrl);

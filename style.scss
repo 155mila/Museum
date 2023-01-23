@@ -1,14 +1,19 @@
-$bc-color: #030303;
-$white: #fff;
-$dark-red: #710707;
-$beige-light: #d2b183;
-$beige: #9d8665;
-$grey: #c4c4c4;
+@import 'variables';
+
+* {
+  border: 1px solid #ff0000;
+}
 
 body {
   font-family: 'Roboto', sans-serif;
 }
 .container {
+  @include breakpoint(lg) {
+    width: 984px;
+  }
+  @include breakpoint(md) {
+    width: 728px;
+  }
   margin: 0 auto;
   width: 1440px;
 }
@@ -45,6 +50,9 @@ body {
     }
   }
   nav {
+    @include breakpoint(lg) {
+      display: none;
+    }
     & .nav {
       display: flex;
       justify-content: space-between;
@@ -63,53 +71,81 @@ body {
 }
 .section {
   scroll-behavior: smooth;
-  &.welcom-section {
+  &.welcome-section {
+    @include breakpoint(lg) {
+      height: 656px;
+    }
+    @include breakpoint(md) {
+      height: 934px;
+    }
+    & .container {
+      @include breakpoint(md) {
+        display: flex;
+        flex-direction: column;
+      }
+    }
     position: relative;
     height: 744px;
     background-color: $bc-color;
-    /*background-image: url(../assets/img/1.jpg);
-    background-repeat: no-repeat;
-    background-position: calc(100% - 43px) calc(100% - 5px);*/
-    & p {
-      font-weight: 300;
-      font-size: 28px;
-      line-height: 33px;
-      letter-spacing: 2px;
-      padding: 25px 0 75px 0;
-      color: $white;
-    }
-    & .btn-welcom {
-      width: 360px;
-      height: 75px;
-      padding: 20px 64px;
-      background: $dark-red;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 300;
-      font-size: 22px;
-      line-height: 26px;
-      letter-spacing: 2px;
-      color: $white;
-    }
-    & .section-title {
-      padding-top: 150px;
-      position: relative;
-      z-index: 1;
-    }
+    & .welcome-content {
+      @include breakpoint(md) {
+        text-align: center;
+      }
 
-    /*&::after {
-      content: '';
-      position: absolute;
-      width: 600px;
-      height: 120px;
-      right: 0;
-      bottom: 0;
-      background-color: $bc-color;
-    }*/
+      & p {
+        @include breakpoint(md) {
+          position: static;
+          padding: 0 0 30px 0;
+          font-size: 20px;
+        }
+        font-weight: 300;
+        font-size: 28px;
+        line-height: 33px;
+        letter-spacing: 2px;
+        padding: 25px 0 75px 0;
+        color: $white;
+        position: relative;
+        z-index: 1;
+      }
+      & .btn-welcome {
+        @include breakpoint(md) {
+          display: none;
+        }
+        width: 360px;
+        height: 75px;
+        padding: 20px 64px;
+        background: $dark-red;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 300;
+        font-size: 22px;
+        line-height: 26px;
+        letter-spacing: 2px;
+        color: $white;
+        position: relative;
+        z-index: 1;
+      }
+      & .section-title {
+        @include breakpoint(md) {
+          position: static;
+          padding-top: 0;
+        }
+        padding-top: 150px;
+        position: relative;
+        z-index: 1;
+      }
+    }
   }
 }
 
 .flex-wrapper {
+  @include breakpoint(lg) {
+    right: 0;
+    top: 0;
+  }
+  @include breakpoint(md) {
+    position: static;
+  }
   position: absolute;
   right: 231px;
   bottom: 0;
@@ -118,6 +154,9 @@ body {
     height: 100%;
     display: none;
     &::before {
+      @include breakpoint(md) {
+        display: none;
+      }
       content: '';
       position: absolute;
       height: 100%;
@@ -130,6 +169,14 @@ body {
         rgba(0, 0, 0, 0.5) 16.19%,
         rgba(0, 0, 0, 0) 30.73%
       );
+    }
+    & img {
+      @include breakpoint(lg) {
+        width: 700px;
+      }
+      @include breakpoint(md) {
+        width: 728px;
+      }
     }
   }
   & .slide.active {
@@ -144,7 +191,7 @@ body {
   position: absolute;
   width: 600px;
   height: 120px;
-  right: 42px;
+  right: 0;
   bottom: 0;
   background-color: $bc-color;
   color: $white;
@@ -203,6 +250,14 @@ body {
 }
 h1.section-title,
 h2.section-title {
+  @include breakpoint(lg) {
+    font-size: 50px;
+    line-height: 75px;
+    letter-spacing: 5px;
+  }
+  @include breakpoint(lg) {
+    font-size: 40px;
+  }
   margin: 0;
   font-family: 'Forum', cursive;
   font-size: 80px;
@@ -231,6 +286,7 @@ h2.section-title {
   padding: 75px 0;
   .cards-container {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 75px 60px;
     margin-top: 85px;
@@ -238,6 +294,11 @@ h2.section-title {
       display: block;
       text-decoration: none;
       color: #000;
+    }
+    img {
+      @include breakpoint(md) {
+        width: 280px;
+      }
     }
     .card-title {
       position: relative;
@@ -271,6 +332,10 @@ h2.section-title {
     }
   }
 }
+
+$image-before: '../assets/img/explore-slider/before.jpg';
+$image-after: '../assets/img/explore-slider/after.jpg';
+
 .explore-section {
   background-color: $bc-color;
   padding: 75px 0;
@@ -278,17 +343,57 @@ h2.section-title {
     display: flex;
     gap: 0 60px;
   }
-  .explore-description p {
-    font-weight: 300;
-    font-size: 22px;
-    line-height: 38px;
-    color: $white;
-    span {
-      color: #caaa7d;
+  .explore-wrapper {
+    @include breakpoint(lg) {
+      flex-direction: column;
+    }
+    display: flex;
+  }
+  .explore-description {
+    @include breakpoint(lg) {
+      width: 100%;
+    }
+    width: 49%;
+    margin-right: 45px;
+    & p {
+      font-weight: 300;
+      font-size: 22px;
+      line-height: 38px;
+      color: $white;
+      span {
+        color: #caaa7d;
+      }
     }
   }
   .section-title {
     margin-bottom: 75px;
+  }
+  .img-comp-container {
+    position: relative;
+    height: 700px;
+    .img-comp-img {
+      position: absolute;
+      width: auto;
+      height: auto;
+      overflow: hidden;
+    }
+
+    .img-comp-img img {
+      display: block;
+      /*vertical-align: middle;*/
+      border-right: none;
+    }
+
+    .img-comp-slider {
+      position: absolute;
+      z-index: 9;
+      cursor: ew-resize;
+      width: 30px;
+      height: 30px;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      background: #fff;
+    }
   }
 }
 .video-section {
@@ -367,8 +472,8 @@ h2.section-title {
       width: 38px;
       height: 31px;
     }
-    .volume-progress {
-    }
+    /*.volume-progress {
+    }*/
     .fullscreen {
       background-image: url(../assets/svg/fullscreen.svg);
       width: 35px;
@@ -461,113 +566,122 @@ h2.section-title {
     justify-content: space-around;
     margin-top: 90px;
     font-style: italic;
-    .wrapper {
-      display: block;
-      position: relative;
-      padding-left: 35px;
-      margin-bottom: 25px;
-      cursor: pointer;
-      font-size: 22px;
-      font-weight: 300;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-    }
+  }
 
-    /* Hide the browser's default radio button */
-    .wrapper input {
-      position: absolute;
-      opacity: 0;
-      cursor: pointer;
-    }
+  .wrapper {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 25px;
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: 300;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
 
-    /* Create a custom radio button */
-    .checkmark {
-      position: absolute;
-      top: 3px;
-      left: 0;
-      height: 15px;
-      width: 15px;
-      border: 2px solid #000000;
-      border-radius: 50%;
-    }
+  /* Hide the browser's default radio button */
+  .wrapper input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
 
-    /* On mouse-over, add a grey background color */
-    .wrapper:hover input ~ .checkmark {
-      background-color: #ccc;
-    }
+  /* Create a custom radio button */
+  .checkmark {
+    position: absolute;
+    top: 3px;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    border: 2px solid #000000;
+    border-radius: 50%;
+  }
 
-    /* Create the indicator (the dot/circle - hidden when not checked) */
-    .checkmark:after {
-      content: '';
-      position: absolute;
+  /* On mouse-over, add a grey background color */
+  .wrapper:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  .checkmark:after {
+    content: '';
+    position: absolute;
+    display: none;
+  }
+
+  /* Show the indicator (dot/circle) when checked */
+  .wrapper input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  /* Style the indicator (dot/circle) */
+  .wrapper .checkmark:after {
+    top: 4px;
+    left: 4px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #000;
+  }
+
+  h3 {
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 33px;
+  }
+
+  .tikets-type {
+    @include breakpoint(lg) {
       display: none;
     }
+  }
 
-    /* Show the indicator (dot/circle) when checked */
-    .wrapper input:checked ~ .checkmark:after {
-      display: block;
-    }
-
-    /* Style the indicator (dot/circle) */
-    .wrapper .checkmark:after {
-      top: 4px;
-      left: 4px;
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: #000;
-    }
-    h3 {
-      font-weight: bold;
-      font-size: 28px;
-      line-height: 33px;
-    }
-    .ticket-amount {
-      border: 3px solid #000;
-      padding: 5px;
-      input {
-        border: none;
-        text-align: center;
-        font-size: 27px;
-        font-style: italic;
-      }
-      button {
-        font-size: 32px;
-        border: none;
-        background: transparent;
-        cursor: pointer;
-      }
-    }
-    p {
-      font-weight: 300;
-      font-size: 22px;
-      line-height: 26px;
-      margin: 10px 0 15px 0;
-    }
-    .total {
-      margin: 50px 0;
-      font-weight: bold;
-      font-size: 28px;
-      line-height: 33px;
-      letter-spacing: 1.65px;
-    }
-    .btn-tickets {
-      width: 175px;
-      height: 50px;
-      font-weight: 300;
-      font-size: 22px;
-      font-style: italic;
-      line-height: 26px;
-      letter-spacing: 2px;
-      background: #000;
-      color: $white;
+  .ticket-amount {
+    border: 3px solid #000;
+    padding: 5px;
+    input {
       border: none;
+      text-align: center;
+      font-size: 27px;
+      font-style: italic;
+    }
+    button {
+      font-size: 32px;
+      border: none;
+      background: transparent;
       cursor: pointer;
-      &:hover {
-        background-color: $dark-red;
-      }
+    }
+  }
+  p {
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 26px;
+    margin: 10px 0 15px 0;
+  }
+  .total {
+    margin: 50px 0;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 33px;
+    letter-spacing: 1.65px;
+  }
+  .btn-tickets {
+    width: 175px;
+    height: 50px;
+    font-weight: 300;
+    font-size: 22px;
+    font-style: italic;
+    line-height: 26px;
+    letter-spacing: 2px;
+    background: #000;
+    color: $white;
+    border: none;
+    cursor: pointer;
+    &:hover {
+      background-color: $dark-red;
     }
   }
 }
@@ -582,11 +696,22 @@ h2.section-title {
 .contacts-section {
   padding: 75px 0;
   .contact-content {
+    @include breakpoint(lg) {
+      margin: 10px;
+    }
     display: flex;
     justify-content: space-between;
     margin: 80px;
+    & img {
+      @include breakpoint(lg) {
+        width: 694px;
+      }
+    }
     .contact-info {
       .contact-name {
+        @include breakpoint(lg) {
+          font-size: 24px;
+        }
         font-weight: 500;
         font-size: 28px;
         line-height: 33px;
@@ -594,6 +719,9 @@ h2.section-title {
         padding-bottom: 22px;
       }
       .contact {
+        @include breakpoint(lg) {
+          font-size: 20px;
+        }
         font-weight: 300;
         font-size: 22px;
         line-height: 26px;
@@ -604,6 +732,9 @@ h2.section-title {
 }
 
 .footer {
+  @include breakpoint(lg) {
+    height: 215px;
+  }
   background-color: $bc-color;
   padding: 75px 0 50px 0;
   height: 268px;
@@ -697,4 +828,134 @@ h2.section-title {
 .google-street-view {
   width: calc(100vw - 20px);
   height: calc(100vh - 20px);
+}
+
+.nav-bar {
+  position: absolute;
+  background-color: #000;
+  top: 17%;
+  right: 100%;
+  height: 82vh;
+  width: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+.show-nav {
+  transform: translateY(0);
+  transition: transform 0.5s ease;
+}
+
+.toggle {
+  left: 0;
+  box-shadow: 1px 0 15px 2px rgba(0, 0, 0, 0.4);
+  z-index: 999;
+}
+
+.toggle-menu {
+  @include breakpoint(minlg) {
+    display: none;
+  }
+  width: 28px;
+  height: 23px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 7px 12px;
+  position: relative;
+  z-index: 9999;
+  cursor: pointer;
+}
+
+.line {
+  width: 100%;
+  height: 2px;
+  border-radius: 5px;
+  background-color: #fff;
+  transition: transform 0.2s ease-out;
+  -webkit-transition: transform 0.2s ease-out;
+  -moz-transition: transform 0.2s ease-out;
+  -ms-transition: transform 0.2s ease-out;
+  -o-transition: transform 0.2s ease-out;
+}
+
+.toggle .line1 {
+  background-color: #000000;
+  transform: scale(0.9) rotateZ(-45deg) translate(-6px, 4px);
+}
+
+.toggle .line2 {
+  display: none;
+}
+
+.toggle .line3 {
+  background-color: #000000;
+  transform: scale(0.9) rotateZ(45deg) translate(-6px, -4px);
+}
+
+.change .line1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-8px, 4px);
+}
+
+.change .line2 {
+  opacity: 0;
+}
+
+.change .line3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-6px, -4px);
+}
+
+.toggle .toggle-menu {
+  background-color: white;
+}
+
+.nav-list {
+  position: relative;
+  list-style: none;
+  padding-left: 0;
+  font-size: 14px;
+  margin: 35px 0;
+  & a {
+    text-decoration: none;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 2px;
+    color: #ffffff;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    top: 7px;
+    right: -28px;
+    width: 7px;
+    height: 12px;
+    background-image: url(../assets/svg/arrow-mobile-menu.svg);
+    background-repeat: no-repeat;
+  }
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.open:after {
+  content: '';
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0.3;
+  left: 250px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: fixed;
+  transition: opacity 0.2s ease-in-out, z-index 0.2s ease-in-out;
+}
+
+.hide {
+  display: none;
 }

@@ -1,0 +1,30 @@
+$bc-color: #030303;
+$white: #fff;
+$dark-red: #710707;
+$beige-light: #d2b183;
+$beige: #9d8665;
+$grey: #c4c4c4;
+
+@mixin breakpoint($point) {
+  @if $point == lg {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  } @else if $point == md {
+    @media (max-width: 768px) {
+      @content;
+    }
+  } @else if $point == sm {
+    @media (max-width: 576px) {
+      @content;
+    }
+  } @else if $point == xs {
+    @media (max-width: 320px) {
+      @content;
+    }
+  } @else if $point == minlg {
+    @media (min-width: 1024px) {
+      @content;
+    }
+  }
+}
